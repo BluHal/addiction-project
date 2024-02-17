@@ -1,0 +1,7 @@
+<div class="product-list-container">
+  @for (product of products$ | async; track product) {
+  <app-product [product]="product"></app-product>
+  }
+</div>
+
+<app-floating-btn [route]="'/create'" [icon]="'add'"></app-floating-btn>

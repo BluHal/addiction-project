@@ -1,0 +1,10 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ product?.name }}</mat-card-title>
+    <mat-card-title>${{ product?.price }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions class="gap-4">
+    <button mat-raised-button color="primary" class="w-50" [routerLink]="'/edit/' + product?.id">EDIT</button>
+    <button mat-raised-button color="warn" class="w-50" (click)="onDeleteBtnClick()">DELETE</button>
+  </mat-card-actions>
+</mat-card>
