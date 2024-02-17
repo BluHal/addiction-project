@@ -1,7 +1,14 @@
 <div class="product-list-container">
-  @for (product of products$ | async; track product) {
+  @if ( (products$ | async)?.length == 0) {
+  <div>
+    <h1>No Producs Found</h1>
+    <h3>
+      Add a new one by pressing the + button at the bottom right of the screen.
+    </h3>
+  </div>
+  } @else { @for (product of products$ | async; track product) {
   <app-product [product]="product"></app-product>
-  }
+  } }
 </div>
 
 <app-floating-btn [route]="'/create'" [icon]="'add'"></app-floating-btn>
